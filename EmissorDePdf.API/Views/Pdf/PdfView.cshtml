@@ -1,0 +1,37 @@
+﻿@using EmissorDePdf.API.Views.ModelViews
+
+@model PdfViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fatura</title>
+</head>
+<body>
+    <h1>Fatura</h1>
+
+    <p>Nome: @Model.Nome</p>
+    <p>CPF: @Model.Cpf</p>
+    <p>Email: @Model.Email</p>
+
+    <h2>Produtos</h2>
+    <table>
+        <tr>
+            <th>Nome do Produto</th>
+            <th>Preço</th>
+        </tr>
+        @foreach (var produto in Model.Produtos)
+        {
+            <tr>
+                <td>@produto.Nome</td>
+                <td>@produto.Preco.ToString("C")</td>
+            </tr>
+        }
+    </table>
+
+    <h2>Dados da Nota Fiscal</h2>
+    <p>Data de Emissão: @Model.DataEmissao.ToString("dd/MM/yyyy HH:mm:ss")</p>
+    <p>Valor Total: @Model.ValorTotal.ToString("C")</p>
+    <p>Órgão Emissor: @Model.OrgaoEmissor</p>
+</body>
+</html>
