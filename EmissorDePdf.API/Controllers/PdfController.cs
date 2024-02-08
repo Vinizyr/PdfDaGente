@@ -1,6 +1,7 @@
 ﻿using EmissorDePdf.API.Views.ModelViews;
 using EmissorDePdf.App.Features.Commands;
 using EmissorDePdf.Domain.IRepository;
+using EmissorDePdf.Email;
 using Microsoft.AspNetCore.Mvc;
 using Rotativa.AspNetCore;
 
@@ -11,10 +12,12 @@ namespace EmissorDePdf.API.Controllers
     public class PdfController : ControllerBase
     {
         private readonly IPdfRepository _pdfRepository;
+        private readonly IEmailSender _emailSender;
 
-        public PdfController(IPdfRepository pdfRepository)
+        public PdfController(IPdfRepository pdfRepository, IEmailSender emailSender)
         {
             _pdfRepository = pdfRepository;
+            _emailSender = emailSender;
         }
 
         [HttpPost("")]
@@ -41,5 +44,26 @@ namespace EmissorDePdf.API.Controllers
                 FileDownloadName = "NotaFiscal.pdf"
             };
         }
+
+        [HttpPost("email")]
+        public async Task<IActionResult> EnviarEmail()
+        {
+            try
+            {
+                MailRequest mailRequest = new MailRequest();
+                mailRequest.ToEmail = "marcozyr12@gmail.com";
+                mailRequest.Subject = "Teste Pdf";
+                mailRequest.Body = "PDF";
+                await _emailSender.SendEmailAsync(mailRequest);
+                return Ok();
+            }
+            catch (Exception) 
+            {
+                throw;
+            }
+        }
+
+
+
     }
 }

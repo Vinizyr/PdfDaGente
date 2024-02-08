@@ -1,8 +1,10 @@
 //using EmissorDePdf.App.Features.Handlers;
 using EmissorDePdf.App.Validations;
 using EmissorDePdf.Domain.IRepository;
+using EmissorDePdf.Email;
 using EmissorDePdf.Infra.Repository;
 using FluentValidation.AspNetCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Rotativa.AspNetCore;
 
@@ -23,10 +25,14 @@ builder.Services.AddSwaggerGen(c =>
 
 //Repositories
 builder.Services.AddScoped<IPdfRepository, PdfRepository>();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 //Validations
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<GerarPdfCommandValidator>());
+
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
 

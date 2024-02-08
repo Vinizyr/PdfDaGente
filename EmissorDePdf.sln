@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.API", "EmissorDePdf.API\EmissorDePdf.API.csproj", "{ED0571FB-FCEA-41FC-B9FB-FABD8EBE5FC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissorDePdf.API", "EmissorDePdf.API\EmissorDePdf.API.csproj", "{ED0571FB-FCEA-41FC-B9FB-FABD8EBE5FC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.Domain", "EmissorDePdf.Domain\EmissorDePdf.Domain.csproj", "{35E2F348-D571-4DD9-939D-21C9254E6453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissorDePdf.Domain", "EmissorDePdf.Domain\EmissorDePdf.Domain.csproj", "{35E2F348-D571-4DD9-939D-21C9254E6453}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.App", "EmissorDePdf.App\EmissorDePdf.App.csproj", "{DFAB21F1-71BE-4A31-A876-B8FE3CF5B839}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissorDePdf.App", "EmissorDePdf.App\EmissorDePdf.App.csproj", "{DFAB21F1-71BE-4A31-A876-B8FE3CF5B839}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.Infra", "EmissorDePdf.Infra\EmissorDePdf.Infra.csproj", "{21BCA534-8EDC-47DF-97DC-710F2CB8E226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissorDePdf.Infra", "EmissorDePdf.Infra\EmissorDePdf.Infra.csproj", "{21BCA534-8EDC-47DF-97DC-710F2CB8E226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.Shared", "EmissorDePdf.Shared\EmissorDePdf.Shared.csproj", "{A5086B98-C77D-4F9B-BA4D-FAA2A05FB1C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmissorDePdf.Shared", "EmissorDePdf.Shared\EmissorDePdf.Shared.csproj", "{A5086B98-C77D-4F9B-BA4D-FAA2A05FB1C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmissorDePdf.Email", "EmissorDePdf.Email\EmissorDePdf.Email.csproj", "{8EB18EE3-03F7-4BBE-A07F-24011B8A9681}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A5086B98-C77D-4F9B-BA4D-FAA2A05FB1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5086B98-C77D-4F9B-BA4D-FAA2A05FB1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5086B98-C77D-4F9B-BA4D-FAA2A05FB1C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB18EE3-03F7-4BBE-A07F-24011B8A9681}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB18EE3-03F7-4BBE-A07F-24011B8A9681}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB18EE3-03F7-4BBE-A07F-24011B8A9681}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB18EE3-03F7-4BBE-A07F-24011B8A9681}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
