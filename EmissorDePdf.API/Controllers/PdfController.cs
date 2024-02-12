@@ -44,26 +44,5 @@ namespace EmissorDePdf.API.Controllers
                 FileDownloadName = "NotaFiscal.pdf"
             };
         }
-
-        [HttpPost("email")]
-        public async Task<IActionResult> EnviarEmail()
-        {
-            try
-            {
-                MailRequest mailRequest = new MailRequest();
-                mailRequest.ToEmail = "marcozyr12@gmail.com";
-                mailRequest.Subject = "Teste Pdf";
-                mailRequest.Body = "PDF";
-                await _emailSender.SendEmailAsync(mailRequest);
-                return Ok();
-            }
-            catch (Exception) 
-            {
-                throw;
-            }
-        }
-
-
-
     }
 }

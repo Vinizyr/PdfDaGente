@@ -1,9 +1,11 @@
 //using EmissorDePdf.App.Features.Handlers;
+using EmissorDePdf.API.HangfireJobs;
 using EmissorDePdf.App.Validations;
 using EmissorDePdf.Domain.IRepository;
 using EmissorDePdf.Email;
 using EmissorDePdf.Infra.Repository;
 using FluentValidation.AspNetCore;
+using Hangfire;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Rotativa.AspNetCore;
@@ -12,9 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHangfire(x => x.UseSqlServerStorage("Data Source=IDEAPAD\\SQLEXPRESS;Database=HangFireDb; Trusted_Connection=true;"));
+builder.Services.AddHangfireServer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Emissor de Pdf",
         Version = "v1",
@@ -48,7 +52,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseHangfireDashboard().AddJobsDoHangfire();
 app.UseAuthorization();
 app.UseSwagger();
 app.UseSwaggerUI(c =>

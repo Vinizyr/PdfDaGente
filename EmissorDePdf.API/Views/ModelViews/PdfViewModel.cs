@@ -1,4 +1,4 @@
-﻿using EmissorDePdf.Domain.Models;
+﻿
 
 namespace EmissorDePdf.API.Views.ModelViews
 {

@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Hangfire" Version="1.8.10" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.10" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.10" />
     <PackageReference Include="MailKit" Version="4.3.0" />
     <PackageReference Include="MimeKit" Version="4.3.0" />
     <PackageReference Include="Rotativa.AspNetCore" Version="1.3.2" />
@@ -16,6 +19,11 @@
   <ItemGroup>
     <ProjectReference Include="..\EmissorDePdf.Domain\EmissorDePdf.Domain.csproj" />
     <ProjectReference Include="..\EmissorDePdf.Shared\EmissorDePdf.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Handlers\" />
+    <Folder Include="Features\Results\" />
   </ItemGroup>
 
 </Project>

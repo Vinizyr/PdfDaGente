@@ -8,6 +8,6 @@ namespace EmissorDePdf.Email
 {
     public interface IEmailSender
     {
-        Task SendEmailAsync(MailRequest maillrequest);
+        Task SendEmailAsync();
     }
 }
