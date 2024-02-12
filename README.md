@@ -10,4 +10,4 @@ Ferramnetas utilizadas:
 - FluentValidation
 - Banco de dados Sql Server
 - Rotativa
-- HangFire (Em fase de implementação) 
+- HangFire 
